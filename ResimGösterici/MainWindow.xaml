@@ -22,17 +22,14 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="ListBoxItem">
-                                <Border BorderBrush="Blue" BorderThickness="1" Margin="2">
-                                    <Image>
-                                        <Image.Source>
-                                            <BitmapImage CacheOption="None" CreateOptions="DelayCreation" DecodePixelHeight="96"
-                                                UriSource="{Binding Yol}" />
-                                        </Image.Source>
-                                        <Image.ToolTip>
-                                            <Image Source="{Binding Yol, Converter={StaticResource BitmapImageResolutionDecreaseConverter}}" />
-                                        </Image.ToolTip>
-                                    </Image>
-                                </Border>
+                                <local:ShadowedImage>
+                                    <local:ShadowedImage.Source>
+                                        <BitmapImage CreateOptions="DelayCreation" DecodePixelHeight="96" UriSource="{Binding Yol}" />
+                                    </local:ShadowedImage.Source>
+                                    <local:ShadowedImage.ToolTip>
+                                        <Image Source="{Binding Yol, Converter={StaticResource BitmapImageResolutionDecreaseConverter}}" />
+                                    </local:ShadowedImage.ToolTip>
+                                </local:ShadowedImage>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -40,8 +37,9 @@
             </ListBox.ItemContainerStyle>
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <local:VirtualizingTilePanel ItemSlotSize="96,96" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.IsVirtualizing="True"
-                        VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Recycling" />
+                    <local:VirtualizingTilePanel ItemSlotSize="96,96" MinimumItemSpacing="10" VirtualizingPanel.IsContainerVirtualizable="True"
+                        VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel"
+                        VirtualizingPanel.VirtualizationMode="Recycling" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
