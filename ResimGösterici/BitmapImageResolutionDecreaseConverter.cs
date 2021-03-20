@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
@@ -14,6 +11,7 @@ namespace ResimGösterici
         {
             if (value is Uri uri)
             {
+                GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
                 BitmapImage bi = new();
                 bi.BeginInit();
                 bi.UriSource = uri;

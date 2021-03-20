@@ -24,7 +24,7 @@
                             <ControlTemplate TargetType="ListBoxItem">
                                 <local:ShadowedImage>
                                     <local:ShadowedImage.Source>
-                                        <BitmapImage CreateOptions="DelayCreation" DecodePixelHeight="96" UriSource="{Binding Yol}" />
+                                        <BitmapImage CreateOptions="DelayCreation" DecodePixelHeight="96" UriSource="{Binding Yol}" CacheOption="None" />
                                     </local:ShadowedImage.Source>
                                     <local:ShadowedImage.ToolTip>
                                         <Image Source="{Binding Yol, Converter={StaticResource BitmapImageResolutionDecreaseConverter}}" />
