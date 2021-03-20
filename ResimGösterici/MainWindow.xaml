@@ -19,7 +19,7 @@
                     <Border BorderBrush="Blue" BorderThickness="1">
                         <Image>
                             <Image.Source>
-                                <BitmapImage DecodePixelWidth="96" UriSource="{Binding Yol}" />
+                                <BitmapImage DecodePixelHeight="96" UriSource="{Binding Yol}" />
                             </Image.Source>
                             <Image.ToolTip>
                                 <ToolTip DataContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Mode=Self}}">
@@ -32,7 +32,7 @@
             </ListBox.ItemTemplate>
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <local:VirtualizingWrapPanel ItemWidth="96" />
+                    <local:VirtualizingWrapPanel ItemWidth="96" ItemHeight="96"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
