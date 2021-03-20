@@ -53,6 +53,7 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="BitmapImageResolutionDecreaseConverter.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="VirtualizingWrapPanel.cs" />
     <Page Include="MainWindow.xaml">
