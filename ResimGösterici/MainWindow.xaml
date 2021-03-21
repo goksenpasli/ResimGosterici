@@ -22,9 +22,13 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="ListBoxItem">
-                                <local:ShadowedImage>
+                                <local:ShadowedImage ShowFileIcon="True" ShowShadow="True">
+                                    <local:ShadowedImage.InputBindings>
+                                        <MouseBinding Command="{Binding DosyaGör}" CommandParameter="{Binding Mode=OneWay}" Gesture="CTRL+LeftClick" />
+                                    </local:ShadowedImage.InputBindings>
                                     <local:ShadowedImage.Source>
-                                        <BitmapImage CreateOptions="DelayCreation" DecodePixelHeight="96" UriSource="{Binding Yol}" CacheOption="None" />
+                                        <BitmapImage CacheOption="None" CreateOptions="DelayCreation" DecodePixelHeight="96"
+                                            UriSource="{Binding Yol}" />
                                     </local:ShadowedImage.Source>
                                     <local:ShadowedImage.ToolTip>
                                         <Image Source="{Binding Yol, Converter={StaticResource BitmapImageResolutionDecreaseConverter}}" />

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Input;
 using Microsoft.Win32;
 
@@ -13,7 +15,7 @@ namespace ResimGösterici
         {
             Yükle = new RelayCommand<object>(parameter =>
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog() { Multiselect = true, Filter = "Resim Dosyaları (*.jpg;*.jpeg;*.tif;*.tiff;*.png)|*.jpg;*.jpeg;*.tif;*.tiff;*.png" };
+                OpenFileDialog openFileDialog = new() { Multiselect = true, Filter = "Resim Dosyaları (*.jpg;*.jpeg;*.tif;*.tiff;*.png)|*.jpg;*.jpeg;*.tif;*.tiff;*.png" };
                 if (openFileDialog.ShowDialog() == true)
                 {
                     Resimler = new ObservableCollection<Resim>();
@@ -58,5 +60,10 @@ namespace ResimGösterici
                 }
             }
         }
+
+        public Resim() => DosyaGör = new RelayCommand<object>(parameter => Process.Start(Yol.OriginalString), parameter => File.Exists(Yol.OriginalString));
+
+        public ICommand DosyaGör { get; }
+
     }
 }
