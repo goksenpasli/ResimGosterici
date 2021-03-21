@@ -41,7 +41,7 @@
             </ListBox.ItemContainerStyle>
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <local:VirtualizingTilePanel ItemSlotSize="96,96" MinimumItemSpacing="10" VirtualizingPanel.IsContainerVirtualizable="True"
+                    <local:VirtualizingTilePanel Columns="10" ItemWidth="96" ItemHeightModifier="1" VirtualizingPanel.IsContainerVirtualizable="True"
                         VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel"
                         VirtualizingPanel.VirtualizationMode="Recycling" />
                 </ItemsPanelTemplate>
